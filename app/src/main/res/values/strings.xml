@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LeaderBoard</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_one_name"><b>Learning Leaders</b></string>
+    <string name="tab_two_name"><b>Skills IQ Leaders</b></string>
+    <string name="submit_btn">Submit</string>
+    <string name="dialog_confirm_submission">Are you sure?</string>
+    <string name="positive">Yes</string>
+    <string name="negative">No</string>
+    <string name="dialog_screen">Project Submission</string>
+</resources>

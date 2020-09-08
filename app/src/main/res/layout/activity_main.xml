@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_main"
+    tools:context=".MainActivity">
+    <include layout="@layout/app_bar"
+        android:id="@+id/appbar"/>
+
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/sliding_tabs"
+        android:id="@+id/fragment_learning"
+        android:name="com.coolbanter.leaderboard.HoursFragment"/>
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/fragment_skills"
+        app:layout_constraintTop_toBottomOf="@id/sliding_tabs"
+        android:name="com.coolbanter.leaderboard.ScoreFragment"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/sliding_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:tabIndicatorGravity="bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        app:tabSelectedTextColor="@android:color/black"
+        app:tabTextColor="@android:color/black"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+
+        app:tabMode="fixed" />
+
+
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sliding_tabs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/white">
+
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
