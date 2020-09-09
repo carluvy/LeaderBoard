@@ -1,20 +1,18 @@
 package com.coolbanter.leaderboard;
 
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.MutableLiveData;
 
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -33,7 +31,6 @@ public class FormActivity extends AppCompatActivity {
     private EditText firstNameEt;
     private EditText lastNameEt;
     private EditText projectLinkEt;
-    private Button submitBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +39,9 @@ public class FormActivity extends AppCompatActivity {
 
         Toolbar myToolbar = findViewById(R.id.dialog_appbar);
         setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         emailEt = findViewById(R.id.email);
         firstNameEt = findViewById(R.id.first_name);
@@ -50,9 +50,17 @@ public class FormActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        Intent intent = new Intent(FormActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        return true;
+    }
 
     public void submitForm(View view) {
-    APIService apiService = ApiClient.getFormService();
+    APIService apiService = FormApiClient.getFormService();
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(FormActivity.this);
         alertDialog.setTitle(" ");
@@ -83,7 +91,7 @@ public class FormActivity extends AppCompatActivity {
                         public void onFailure(Call<Void> call, Throwable t) {
                             failureDialog();
                             Log.i(TAG_FAIL, "Has Failed!" + t);
-//                            if (mFormResponseCall.isCanceled()) {
+//                            if (call.isCanceled()) {
 //                                Log.i(TAG_FAIL, "was cancelled");
 //                            }
 
@@ -100,14 +108,12 @@ public class FormActivity extends AppCompatActivity {
             }
 
         });
-        alertDialog.setNegativeButton(R.string.negative, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(FormActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+        alertDialog.setNegativeButton(R.string.negative, (dialog, which) -> {
+            Toast.makeText(FormActivity.this, "Post cancelled!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(FormActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
 
-            }
         });
         alertDialog.create().show();
 

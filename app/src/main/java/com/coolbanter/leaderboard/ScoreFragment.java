@@ -58,7 +58,7 @@ public class ScoreFragment extends Fragment {
 
 //        APIService scoreApi = mRetrofit.create(APIService.class);
 
-        APIService scoreAPIService = ApiClient.getScoresService();
+        APIService scoreAPIService = LeaderBoardApiClient.getScoresService();
 
 
         Call<List<LeaderBoard>> call = scoreAPIService.getScores();

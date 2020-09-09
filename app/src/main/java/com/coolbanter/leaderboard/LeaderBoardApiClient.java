@@ -5,7 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiClient {
+public class LeaderBoardApiClient {
     private static final String BASE_URL = "https://gadsapi.herokuapp.com";
     private static final String BASE_URL_FORM = "https://docs.google.com/forms/d/e";
     private static Retrofit mRetrofit = null;
@@ -39,14 +39,7 @@ public class ApiClient {
     }
 
 
-
-    public static APIService getFormService() {
-        return getRetrofit().create(APIService.class);
-    }
-
-
 }
-
 
 
 

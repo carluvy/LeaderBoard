@@ -66,7 +66,7 @@ public class HoursFragment extends Fragment {
 
 //        HoursApiService hoursApiService = mRetrofit.create(HoursApiService.class);
 
-        APIService hoursApiService = ApiClient.getHourService();
+        APIService hoursApiService = LeaderBoardApiClient.getHourService();
 
 
         Call<List<LeaderBoard>> call = hoursApiService.getHours();
