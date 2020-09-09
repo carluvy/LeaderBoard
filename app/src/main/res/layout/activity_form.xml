@@ -11,12 +11,7 @@
         android:id="@+id/dialog_appbar"
         layout="@layout/dialog_app_bar" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_dialog"-->
-<!--        android:name="com.coolbanter.leaderboard.MyDialogFragment"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/dialog_appbar" />-->
+<!--    >-->
 
 
         <EditText
@@ -27,8 +22,7 @@
             android:layout_marginTop="200dp"
             android:layout_marginEnd="24dp"
             android:padding="8dp"
-            android:hint="First Name"
-            android:autoSizeTextType="uniform"
+            android:hint="@string/first_name_et"
             android:textColor="@android:color/black"
             android:background="@android:color/white"
             app:layout_constraintEnd_toStartOf="@+id/last_name"
@@ -43,12 +37,13 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="200dp"
             android:layout_marginEnd="24dp"
-            android:hint="Last Name"
+            android:hint="@string/last_name_et"
             android:textColor="@android:color/black"
             android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/first_name"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/link"
@@ -59,7 +54,7 @@
             android:layout_marginEnd="24dp"
             android:background="@android:color/white"
             android:padding="8dp"
-            android:hint="Project Link"
+            android:hint="@string/project_link_et"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +70,7 @@
             android:layout_marginEnd="24dp"
             android:padding="8dp"
             android:gravity="start"
-            android:hint="Email Address"
+            android:hint="@string/email_address_et"
             android:textColor="@android:color/black"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,13 +78,14 @@
             app:layout_constraintTop_toBottomOf="@id/last_name" />
 
         <Button
+            android:id="@+id/submit_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:background="@android:color/white"
-            android:onClick="submitProject"
             android:padding="4dp"
-            android:text="Submit"
+            android:text="@string/submit_btn"
+            android:onClick="submitForm"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/link" />

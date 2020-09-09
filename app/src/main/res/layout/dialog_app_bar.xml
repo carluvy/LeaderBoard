@@ -9,7 +9,7 @@
     app:layout_constraintTop_toTopOf="parent"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    android:background="@drawable/header">
+    android:background="@mipmap/header">
 
 
 </androidx.appcompat.widget.Toolbar>

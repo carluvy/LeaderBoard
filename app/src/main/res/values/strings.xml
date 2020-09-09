@@ -9,4 +9,9 @@
     <string name="positive">Yes</string>
     <string name="negative">No</string>
     <string name="dialog_screen">Project Submission</string>
+    <string name="submit_form">Submit</string>
+    <string name="email_address_et">Email Address</string>
+    <string name="project_link_et">Project Link (Github)</string>
+    <string name="last_name_et">Last Name</string>
+    <string name="first_name_et">First Name</string>
 </resources>

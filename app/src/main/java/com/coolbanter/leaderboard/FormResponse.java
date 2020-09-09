@@ -5,8 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.net.URL;
 
-import retrofit2.http.Field;
-import retrofit2.http.Url;
 
 public class FormResponse {
 
@@ -25,9 +23,9 @@ public class FormResponse {
 
     @SerializedName("Link to Project")
     @Expose
-    private URL projectLink;
+    private String projectLink;
 
-    public FormResponse(String emailAddress, String firstName, String lastName, URL projectLink) {
+    public FormResponse(String emailAddress, String firstName, String lastName, String projectLink) {
         this.emailAddress = emailAddress;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -46,7 +44,7 @@ public class FormResponse {
         return lastName;
     }
 
-    public URL getProjectLink() {
+    public String getProjectLink() {
         return projectLink;
     }
 

@@ -1,5 +1,7 @@
 package com.coolbanter.leaderboard;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -9,9 +11,16 @@ public class ApiClient {
     private static Retrofit mRetrofit = null;
 
     public static Retrofit getRetrofit() {
+
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(httpLoggingInterceptor)
+                .build();
         if (mRetrofit == null) {
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
+                    .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
@@ -39,21 +48,5 @@ public class ApiClient {
 }
 
 
-//    private static Retrofit getRetrofit() {
-//        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-//        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
-//
-//        return new Retrofit.Builder()
-//                .baseUrl("https://gadsapi.herokuapp.com")
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .client(okHttpClient)
-//                .build();
-//
-//
-//
-//    }
-//    public static APIService getApiService() {
-//        return getRetrofit().create(APIService.class);
-//    }
+
 
