@@ -1,13 +1,13 @@
 package com.coolbanter.leaderboard;
 
 
-import androidx.activity.OnBackPressedCallback;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,49 +63,47 @@ public class FormActivity extends AppCompatActivity {
     APIService apiService = FormApiClient.getFormService();
 
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(FormActivity.this);
-        alertDialog.setTitle(" ");
+        alertDialog.setTitle("Alert");
         alertDialog.setMessage(R.string.dialog_confirm_submission);
-        alertDialog.setPositiveButton(R.string.positive, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String firstName = firstNameEt.getText().toString();
-                String lastName = lastNameEt.getText().toString();
-                String email = emailEt.getText().toString();
-                String projectLink = projectLinkEt.getText().toString();
-                if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !projectLink.isEmpty()) {
-                    Call<Void> mFormResponseCall  = apiService.submitDetails(firstName, lastName,
-                            email, projectLink);
-                    mFormResponseCall.enqueue(new Callback<Void>() {
-                        @Override
-                        public void onResponse(Call<Void> call, Response<Void> response) {
-                            if (response.isSuccessful()) {
-                                Log.i(TAG, "Was A Success!" + response.code());
-
-                            }
-                            successDialog();
+        alertDialog.setPositiveButton(R.string.positive, (dialog, which) -> {
+            String firstName = firstNameEt.getText().toString();
+            String lastName = lastNameEt.getText().toString();
+            String email = emailEt.getText().toString();
+            String projectLink = projectLinkEt.getText().toString();
+            if (!firstName.isEmpty() && !lastName.isEmpty() && !email.isEmpty() && !projectLink.isEmpty()) {
+                Call<Void> mFormResponseCall  = apiService.submitDetails(firstName, lastName,
+                        email, projectLink);
+                mFormResponseCall.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        if (response.isSuccessful()) {
+                            Log.i(TAG, "Was A Success!" + response.code());
 
 
                         }
+                        successDialog();
 
-                        @Override
-                        public void onFailure(Call<Void> call, Throwable t) {
-                            failureDialog();
-                            Log.i(TAG_FAIL, "Has Failed!" + t);
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        Log.i(TAG_FAIL, "Has Failed!" + t);
 //                            if (call.isCanceled()) {
 //                                Log.i(TAG_FAIL, "was cancelled");
 //                            }
 
 
 
-                        }
-                    });
-                } else {
-                    Toast.makeText(FormActivity.this, "All fields are required", Toast.LENGTH_LONG).show();
-                }
-
-                dialog.dismiss();
-
+                    }
+                });
+            } else {
+                failureDialog();
+                Toast.makeText(FormActivity.this, "All fields are required", Toast.LENGTH_LONG).show();
             }
+
+            dialog.dismiss();
 
         });
         alertDialog.setNegativeButton(R.string.negative, (dialog, which) -> {
@@ -123,6 +121,7 @@ public class FormActivity extends AppCompatActivity {
     }
 
 private void successDialog() {
+
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(FormActivity.this);
         alertDialog.setMessage("Submitted Successfully");
         alertDialog.setTitle(" ");
