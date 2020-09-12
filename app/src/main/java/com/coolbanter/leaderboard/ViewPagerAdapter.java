@@ -17,7 +17,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
         if (position == 0) {
             return new HoursFragment();
         } else {
-            return new ScoreFragment();
+            return new ScoresFragment();
         }
     }
 

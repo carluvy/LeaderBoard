@@ -18,9 +18,11 @@ import java.util.List;
 public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.HoursViewHolder>{
 
     List<LeaderBoard> mHoursList;
+    Context mContext;
 
-    HoursAdapter(List<LeaderBoard> hoursList) {
+    HoursAdapter(Context context, List<LeaderBoard> hoursList) {
         mHoursList = hoursList;
+        mContext = context;
 
     }
 
@@ -39,7 +41,6 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.HoursViewHol
 
         String fullText = "";
         holder.mName.setText(hours.getName());
-//        fullText += hours.getName() + "\n";
         fullText += hours.getHours() + " learning hours, ";
         fullText += hours.getCountry();
         holder.mHours.append(fullText);

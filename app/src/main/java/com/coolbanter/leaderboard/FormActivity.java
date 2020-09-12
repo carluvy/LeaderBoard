@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 
 
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 
 
 import retrofit2.Call;
@@ -61,7 +61,6 @@ public class FormActivity extends AppCompatActivity {
 
     public void submitForm(View view) {
     APIService apiService = FormApiClient.getFormService();
-
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(FormActivity.this);
         alertDialog.setTitle("Alert");
         alertDialog.setMessage(R.string.dialog_confirm_submission);

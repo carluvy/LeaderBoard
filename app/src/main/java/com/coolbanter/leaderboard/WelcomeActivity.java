@@ -15,13 +15,10 @@ public class WelcomeActivity extends AppCompatActivity {
 
         Handler handler = new Handler();
         int splashTime = 3000;
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        handler.postDelayed(() -> {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
         }, splashTime);
 
 

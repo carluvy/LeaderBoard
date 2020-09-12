@@ -1,6 +1,7 @@
 package com.coolbanter.leaderboard;
 
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,22 +20,25 @@ import java.net.URL;
 
 import java.util.List;
 
-public class ScoreAdapter extends RecyclerView.Adapter<ScoreAdapter.ScoreViewHolder> {
+public class ScoresAdapter extends RecyclerView.Adapter<ScoresAdapter.ScoreViewHolder> {
 
 
 
     List<LeaderBoard> mScoreList;
+    Context mContext;
 
 
-    ScoreAdapter(List<LeaderBoard> scoreList) {
+    ScoresAdapter(Context context, List<LeaderBoard> scoreList) {
         mScoreList = scoreList;
+        mContext = context;
+
 
     }
 
 
     @NonNull
     @Override
-    public ScoreAdapter.ScoreViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ScoresAdapter.ScoreViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.score_item_list, parent, false);
         return new ScoreViewHolder(itemView);

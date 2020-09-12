@@ -22,7 +22,7 @@
         android:layout_height="0dp"
         android:id="@+id/fragment_skills"
         app:layout_constraintTop_toBottomOf="@id/sliding_tabs"
-        android:name="com.coolbanter.leaderboard.ScoreFragment"/>
+        android:name="com.coolbanter.leaderboard.ScoresFragment"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/sliding_tabs"
