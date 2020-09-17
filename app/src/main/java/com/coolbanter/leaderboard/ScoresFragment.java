@@ -12,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.coolbanter.leaderboard.viewModel.LeaderBoardViewModel;
+import com.coolbanter.leaderboard.utils.ScoresAdapter;
+
 import java.util.Collections;
 
 public class ScoresFragment extends Fragment {
@@ -32,13 +35,11 @@ public class ScoresFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_score,
                 container, false);
 
-//        scoresData = view.findViewById(R.id.name_iq);
 
         mRecyclerView = view.findViewById(R.id.recyclerview_iq);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         mRecyclerView.setNestedScrollingEnabled(false);
-//        List<LeaderBoard> scores = new ArrayList<>();
-//        mScoreAdapter = new ScoresAdapter(scores);
+
         mRecyclerView.setAdapter(mScoresAdapter);
         getScoresData();
 

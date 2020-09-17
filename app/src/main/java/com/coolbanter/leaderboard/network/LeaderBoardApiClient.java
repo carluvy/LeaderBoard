@@ -1,4 +1,4 @@
-package com.coolbanter.leaderboard;
+package com.coolbanter.leaderboard.network;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -7,7 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LeaderBoardApiClient {
     private static final String BASE_URL = "https://gadsapi.herokuapp.com";
-    private static final String BASE_URL_FORM = "https://docs.google.com/forms/d/e";
     private static Retrofit mRetrofit = null;
 
     public static Retrofit getRetrofit() {

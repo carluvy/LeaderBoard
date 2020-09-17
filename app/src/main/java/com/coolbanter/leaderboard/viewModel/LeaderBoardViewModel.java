@@ -1,4 +1,4 @@
-package com.coolbanter.leaderboard;
+package com.coolbanter.leaderboard.viewModel;
 
 
 
@@ -10,6 +10,10 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.coolbanter.leaderboard.Model.LeaderBoard;
+import com.coolbanter.leaderboard.network.APIService;
+import com.coolbanter.leaderboard.network.LeaderBoardApiClient;
 
 import java.util.List;
 

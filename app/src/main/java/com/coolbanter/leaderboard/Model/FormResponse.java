@@ -1,9 +1,7 @@
-package com.coolbanter.leaderboard;
+package com.coolbanter.leaderboard.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import java.net.URL;
 
 
 public class FormResponse {

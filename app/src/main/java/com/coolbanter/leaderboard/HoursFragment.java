@@ -15,6 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.coolbanter.leaderboard.utils.HoursAdapter;
+import com.coolbanter.leaderboard.viewModel.LeaderBoardViewModel;
+
 
 import java.util.Collections;
 
@@ -23,7 +26,7 @@ import java.util.Collections;
 public class HoursFragment extends Fragment {
 
     HoursAdapter mHoursAdapter;
-//    private TextView hoursData;
+
     private RecyclerView mRecyclerView;
 
     public HoursFragment() {
@@ -41,11 +44,8 @@ public class HoursFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.recyclerview_ll);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         mRecyclerView.setNestedScrollingEnabled(false);
-//        List<LeaderBoard> hoursList = new ArrayList<>();
-//        mHoursAdapter = new HoursAdapter(hoursList);
         mRecyclerView.setAdapter(mHoursAdapter);
 
-//        hoursData = view.findViewById(R.id.name);
 
         getHoursData();
 

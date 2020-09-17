@@ -1,4 +1,4 @@
-package com.coolbanter.leaderboard;
+package com.coolbanter.leaderboard.views;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.coolbanter.leaderboard.R;
+import com.coolbanter.leaderboard.utils.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     ViewPager2 viewPager2;
     FragmentStateAdapter mPagerAdapter;
-//    FragmentManager mFragmentManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

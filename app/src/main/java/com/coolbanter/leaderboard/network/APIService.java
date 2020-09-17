@@ -1,5 +1,7 @@
-package com.coolbanter.leaderboard;
+package com.coolbanter.leaderboard.network;
 
+
+import com.coolbanter.leaderboard.Model.LeaderBoard;
 
 import java.util.List;
 

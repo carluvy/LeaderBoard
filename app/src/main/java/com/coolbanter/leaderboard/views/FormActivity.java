@@ -1,4 +1,4 @@
-package com.coolbanter.leaderboard;
+package com.coolbanter.leaderboard.views;
 
 
 
@@ -17,6 +17,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+import com.coolbanter.leaderboard.R;
+import com.coolbanter.leaderboard.network.APIService;
+import com.coolbanter.leaderboard.network.FormApiClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -81,6 +85,9 @@ public class FormActivity extends AppCompatActivity {
 
                         }
                         successDialog();
+                        Intent intent = new Intent(FormActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
 
 
 
@@ -138,6 +145,8 @@ private void failureDialog() {
         alertDialog.show();
 
         }
+
+
 
 
 

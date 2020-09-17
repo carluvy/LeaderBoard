@@ -1,4 +1,4 @@
-package com.coolbanter.leaderboard;
+package com.coolbanter.leaderboard.utils;
 
 
 import android.content.Context;
@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.coolbanter.leaderboard.Model.LeaderBoard;
+import com.coolbanter.leaderboard.R;
 import com.squareup.picasso.Picasso;
 
 import java.net.URL;
@@ -28,7 +30,7 @@ public class ScoresAdapter extends RecyclerView.Adapter<ScoresAdapter.ScoreViewH
     Context mContext;
 
 
-    ScoresAdapter(Context context, List<LeaderBoard> scoreList) {
+    public ScoresAdapter(Context context, List<LeaderBoard> scoreList) {
         mScoreList = scoreList;
         mContext = context;
 

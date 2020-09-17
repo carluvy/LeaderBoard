@@ -1,4 +1,4 @@
-package com.coolbanter.leaderboard;
+package com.coolbanter.leaderboard.utils;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.coolbanter.leaderboard.Model.LeaderBoard;
+import com.coolbanter.leaderboard.R;
 import com.squareup.picasso.Picasso;
 
 import java.net.URL;
@@ -20,7 +22,7 @@ public class HoursAdapter extends RecyclerView.Adapter<HoursAdapter.HoursViewHol
     List<LeaderBoard> mHoursList;
     Context mContext;
 
-    HoursAdapter(Context context, List<LeaderBoard> hoursList) {
+    public HoursAdapter(Context context, List<LeaderBoard> hoursList) {
         mHoursList = hoursList;
         mContext = context;
 
