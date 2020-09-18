@@ -6,4 +6,8 @@ Customizing Toolbar.
 Using the recyclerview.
 How to send @Get and @Post requests with Retrofit.
 
-Note: This is a complete newbie approach to everything mentioned above!
+Note: This is a complete newbie approach to every
+thing mentioned above!
+
+
+<image src="Screenshot_20200909-193950.png">
